@@ -5,12 +5,34 @@
 
 using namespace std;
 
-int main (int argc, char *argv[]){
-    int count = 0, l;
-    while (cin >> l){
-        count += l;
+int main(int argc, char *argv[])
+{
+    int count = 0;
+    char symbol;
+    string num;
+
+    if (read(STDIN_FILENO, &symbol, sizeof(char)) == -1)
+    {
+        return -1;
     }
-    cout << count;
+
+    while (symbol != '\n')
+    {
+        if (symbol != ' ')
+        {
+            num += symbol;
+        }
+        else
+        {
+            count += stoi(num);
+            num = "";
+        }
+        read(STDIN_FILENO, &symbol, sizeof(char));
+    }
+
+    count += stoi(num);
+
+    write(STDOUT_FILENO, &count, sizeof(int));
 
     return 0;
 }
