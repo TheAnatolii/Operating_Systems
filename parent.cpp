@@ -66,7 +66,7 @@ int main(int argc, char *argv[])
         {
             return 7;
         }
-        final = to_string(answer);
+        final = to_string(answer) + "\n";
 
         write(STDOUT_FILENO, &final, final.length());
         close(fd[0]);

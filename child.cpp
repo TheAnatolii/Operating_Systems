@@ -29,8 +29,10 @@ int main(int argc, char *argv[])
         }
         read(STDIN_FILENO, &symbol, sizeof(char));
     }
-
-    count += stoi(num);
+    if (num != "")
+    {
+        count += stoi(num);
+    }
 
     write(STDOUT_FILENO, &count, sizeof(int));
 
