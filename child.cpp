@@ -1,4 +1,5 @@
 #include <iostream>
+#include <exception>
 #include <unistd.h>
 #include <string>
 #include <fstream>
@@ -29,11 +30,15 @@ int main(int argc, char *argv[])
         }
         read(STDIN_FILENO, &symbol, sizeof(char));
     }
-    if (num != "")
+
+    try
     {
         count += stoi(num);
     }
-
+    catch (invalid_argument &ex)
+    {
+        count = 0;
+    }
     write(STDOUT_FILENO, &count, sizeof(int));
 
     return 0;
