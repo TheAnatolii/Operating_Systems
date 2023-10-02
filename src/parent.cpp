@@ -71,15 +71,8 @@ int main(int argc, char *argv[])
         write(STDOUT_FILENO, &final, final.length());
         close(fd[0]);
         close(file);
-
-        int status;
-        waitpid(0, &status, 0);
-
-        if (status != 0)
-        {
-            return -1;
-        }
     }
+}
 
-    return 0;
+return 0;
 }
