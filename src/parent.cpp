@@ -24,7 +24,7 @@ int main(int argc, char *argv[])
             return 7;
         }
     }
-    int file = open(file_name.c_str(), O_RDONLY | O_CREAT, 0777);
+    int file = open(file_name.c_str(), O_RDONLY | O_CREAT, 0777); //?
     if (file == -1)
     {
         return -1;
