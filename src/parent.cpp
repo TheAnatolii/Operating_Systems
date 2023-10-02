@@ -72,7 +72,6 @@ int main(int argc, char *argv[])
         close(fd[0]);
         close(file);
     }
-}
 
-return 0;
+    return 0;
 }
